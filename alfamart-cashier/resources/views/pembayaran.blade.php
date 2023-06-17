@@ -29,6 +29,9 @@
                 <li class="nav-item active">
                     <a href="#" class="nav-link active text-center" aria-current="page" style="color: white;">Transaksi</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-center" aria-current="page" style="color: #c00003;">Transaksi</a>
+                </li>
             </ul>
             <hr>
             <div class="dropdown">
@@ -44,7 +47,7 @@
         <form>
             <div class="container shadow px-5 ps-5 pt-2" style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
                 <h1 class="fw-bold text-center">Pembayaran</h1>
-                <div class="card mt-5 mb-5">
+                <div class="card mt-5 mb-5 shadow" style="border: none">
                     <h5 class="card-header text-white" style="background-color: #c00003;">Pembayaran</h5>
                     <div class="card-body">
                         <div class="form-group mb-3">
@@ -77,8 +80,8 @@
                             <input type="text" class="form-control" id="kembalian" name="kembalian" placeholder="Rp 0">
                         </div>
                         <!-- Button Selesaikan Transaksi -->
-                        <button class="btn" style="background-color: #FCD413">Selesaikan Transaksi</button>
-                        <button class="btn mx-3" style="background-color: #ffeaed;">Kembali</button>   
+                        <button class="btn btn-warning">Selesaikan Transaksi</button>
+                        <button class="btn btn-outline-danger mx-3">Kembali</button>   
                     </div>
                 </div>
             </div>
