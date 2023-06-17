@@ -77,8 +77,8 @@
                             <input type="text" class="form-control" id="kembalian" name="kembalian" placeholder="Rp 0">
                         </div>
                         <!-- Button Selesaikan Transaksi -->
-                        <button class="btn" style="background-color: #FCD413">Selesaikan Transaksi</button>
-                        <button class="btn mx-3" style="background-color: #ffeaed;">Kembali</button>   
+                        <button class="btn btn-warning">Selesaikan Transaksi</button>
+                        <button class="btn btn-outline-danger mx-3">Kembali</button>   
                     </div>
                 </div>
             </div>

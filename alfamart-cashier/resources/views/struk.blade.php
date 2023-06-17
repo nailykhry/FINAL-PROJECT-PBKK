@@ -40,45 +40,70 @@
         </div>
         <!-- End of Side bar -->
 
-        <!-- Judul -->
+        <!-- Form -->
         <form>
             <div class="container shadow px-5 ps-5 pt-2" style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
                 <h1 class="fw-bold text-center">Struk</h1>
                 <div class="card mt-5 mb-5 shadow" style="border: none">
-                    <h5 class="card-header text-white" style="background-color: #c00003;">Struk</h5>
+                <h5 class="card-header text-white" style="background-color: #c00003;">Struk</h5>
                     <div class="card-body">
-                        <div class="form-group mb-3">
-                            <label for="kodetransaksi">Kode Transaksi</label>
-                            <input type="text" class="form-control" id="kodetransaksi" name="kodetransaksi" placeholder="Kode transaksi">
+                        <div class="row">
+                            <p class="col card-title fw-bold">Kode Transaksi:</p>
+                            <p class="col card-title fw-bold">Tanggal:</p>
                         </div>
+                        
                         <div class="form-group mb-3">
-                            <label for="totalbelanja">Total Belanja</label>
-                            <input type="text" class="form-control" id="totalbelanja" name="totalbelanja" placeholder="Rp 0">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Kode Item</th>
+                                        <th scope="col">Nama Item</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Harga</th>
+                                        <th scope="col">Sub Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">kode item 1</td>
+                                        <td>nama item 1</td>
+                                        <td>1</td>
+                                        <td>Rp 0</td>
+                                        <td>Rp 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">kode item 2</td>
+                                        <td>nama item 2</td>
+                                        <td>2</td>
+                                        <td>Rp 0</td>
+                                        <td>Rp 0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total Item</th>
+                                        <td colspan="2">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total Discount</th>
+                                        <td colspan="2">Rp 0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" colspan="3">Total Belanja</th>
+                                        <th colspan="2">Rp 0</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" colspan="3">Tunai/Kartu/E-money</th>
+                                        <td colspan="2">Rp 0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" colspan="3">Kembalian</th>
+                                        <td colspan="2">Rp 0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Button Selesaikan Transaksi -->
+                            <button class="btn btn-warning">Cetak Struk</button>
+                            <button class="btn btn-outline-danger mx-3">Kembali</button>   
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="kodeitem">Metode Pembayaran</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Pilih metode pembayaran</option>
-                                <option value="1">Tunai</option>
-                                <option value="2">Kartu</option>
-                                <option value="3">E-money</option>
-                            </select>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="nomor">Nomor Kartu/E-money (Jika pembayaran non-tunai)</label>
-                            <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Nomor kartu/e-money">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="bayar">Bayar</label>
-                            <input type="text" class="form-control" id="bayar" name="bayar" placeholder="Rp 0">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="kembalian">Kembalian</label>
-                            <input type="text" class="form-control" id="kembalian" name="kembalian" placeholder="Rp 0">
-                        </div>
-                        <!-- Button Selesaikan Transaksi -->
-                        <button class="btn" style="background-color: #FCD413">Selesaikan Transaksi</button>
-                        <button class="btn mx-3" style="background-color: #ffeaed;">Kembali</button>   
                     </div>
                 </div>
             </div>
