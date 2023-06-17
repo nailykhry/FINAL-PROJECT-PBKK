@@ -29,6 +29,9 @@
                 <li class="nav-item active">
                     <a href="#" class="nav-link active text-center" aria-current="page" style="color: white;">Transaksi</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-center" aria-current="page" style="color: #c00003;">Inventaris</a>
+                </li>
             </ul>
             <hr>
             <div class="dropdown">
@@ -60,6 +63,7 @@
                                         <th scope="col">Nama Item</th>
                                         <th scope="col">Jumlah</th>
                                         <th scope="col">Harga</th>
+                                        <th scope="col">Discount</th>
                                         <th scope="col">Sub Total</th>
                                     </tr>
                                 </thead>
@@ -67,36 +71,38 @@
                                     <tr>
                                         <td scope="row">kode item 1</td>
                                         <td>nama item 1</td>
-                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>Rp 0</td>
                                         <td>Rp 0</td>
                                         <td>Rp 0</td>
                                     </tr>
                                     <tr>
                                         <td scope="row">kode item 2</td>
                                         <td>nama item 2</td>
-                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>Rp 0</td>
                                         <td>Rp 0</td>
                                         <td>Rp 0</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Total Item</th>
-                                        <td colspan="2">0</td>
+                                        <td colspan="3">0</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Total Discount</th>
-                                        <td colspan="2">Rp 0</td>
+                                        <td colspan="3">Rp 0</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Total Belanja</th>
-                                        <th colspan="2">Rp 0</th>
+                                        <th colspan="3">Rp 0</th>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Tunai/Kartu/E-money</th>
-                                        <td colspan="2">Rp 0</td>
+                                        <td colspan="3">Rp 0</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Kembalian</th>
-                                        <td colspan="2">Rp 0</td>
+                                        <td colspan="3">Rp 0</td>
                                     </tr>
                                 </tbody>
                             </table>

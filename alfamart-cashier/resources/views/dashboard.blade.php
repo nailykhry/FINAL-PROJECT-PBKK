@@ -24,14 +24,13 @@
             <hr>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item active">
-                    <a href="#" class="nav-link active text-center" aria-current="page" style="color: white;">
-                    Dashboard
-                    </a>
+                    <a href="#" class="nav-link active text-center" aria-current="page" style="color: white;">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-center" aria-current="page" style="color: #c00003;">
-                    Transaksi
-                    </a>
+                    <a href="#" class="nav-link text-center" aria-current="page" style="color: #c00003;">Transaksi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-center" aria-current="page" style="color: #c00003;">Inventaris</a>
                 </li>
             </ul>
             <hr>
