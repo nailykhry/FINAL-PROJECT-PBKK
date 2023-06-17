@@ -39,34 +39,37 @@
                 <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                 <strong>mdo</strong>
             </a>
+        </div>
+    </div>
+    <!-- End of Side bar -->
+
+    <!-- Judul -->
+    <div class="container pt-2 shadow text-center"
+        style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
+        <h1 class="text-center fw-bold">Dashboard</h1>
+
+        <!-- Mulai Transaksi -->
+        <div style="margin-top: 100px;">
+            <button class="btn btn-lg col-4" href="#" style="background-color: #c00003; color: white;">Mulai
+                Transaksi</button>
+        </div>
+
+        <!-- Card -->
+        <div class="card-group mt-5 mb-5">
+            <div class="card p-5" style="background-color: #ffeaed;">
+                <h1 style="color: #c00003;">{{$productCount}}</h1>
+                <h5 class="card-title ">Jenis Barang</h5>
+            </div>
+            <div class="card p-5" style="background-color: #ffeaed;">
+                <h1 style="color: #c00003;">{{$transactionCount}}</h1>
+                <h5 class="card-title ">Transaksi</h5>
+            </div>
+            <div class="card p-5" style="background-color: #ffeaed;">
+                <h1 style="color: #c00003;">{{$selled}}</h1>
+                <h5 class="card-title ">Barang Terjual</h5>
             </div>
         </div>
-        <!-- End of Side bar -->
+    </div>
+</body>
 
-        <!-- Judul -->
-        <div class="container pt-2 shadow text-center" style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
-            <h1 class="text-center fw-bold">Dashboard</h1>
-
-            <!-- Mulai Transaksi -->
-            <div style="margin-top: 100px;">
-                <button class="btn btn-lg col-4" href="#" style="background-color: #c00003; color: white;">Mulai Transaksi</button>
-            </div>
-
-            <!-- Card -->
-            <div class="card-group mt-5 mb-5">
-                <div class="card p-5" style="background-color: #ffeaed;">
-                    <h1 style="color: #c00003;">5</h1>
-                    <h5 class="card-title ">Jenis Barang</h5>
-                </div>
-                <div class="card p-5" style="background-color: #ffeaed;">
-                    <h1 style="color: #c00003;">10</h1>
-                    <h5 class="card-title ">Transaksi</h5>
-                </div>
-                <div class="card p-5" style="background-color: #ffeaed;">
-                    <h1 style="color: #c00003;">25</h1>
-                    <h5 class="card-title ">Barang Terjual</h5>
-                </div>
-            </div>
-        </div>
-    </body>
 </html>
