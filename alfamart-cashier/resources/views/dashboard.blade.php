@@ -16,7 +16,7 @@
     </head>
     <body>
         <!-- Side bar -->
-        <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; height: 100%; position: fixed; background-color: #ffeaed;">
+        <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 15%; height: 100%; position: fixed; background-color: #ffeaed;">
             <a class="navbar-brand" href="#">
                 <img src="logo_alfamart.png" alt="Logo Brand" width="40" height="40">
                 <span class="navbar-text ml-2 fs-4 fw-bold" style="color: #c00003">Alfamart</span>
@@ -45,16 +45,16 @@
         <!-- End of Side bar -->
 
         <!-- Judul -->
-        <div class="container px-5 ps-5 pt-2 shadow text-center" style="margin-left: 280px; height: 70px; background-color: #ffeaed; color: #c00003;">
-            <h1 class="text-center fw-bold" style="margin-right: 70px;">Dashboard</h1>
+        <div class="container pt-2 shadow text-center" style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
+            <h1 class="text-center fw-bold">Dashboard</h1>
 
             <!-- Mulai Transaksi -->
-            <div style="margin-right: 70px; margin-top: 100px;">
+            <div style="margin-top: 100px;">
                 <button class="btn btn-lg col-4" href="#" style="background-color: #c00003; color: white;">Mulai Transaksi</button>
             </div>
 
             <!-- Card -->
-            <div class="card-group mt-5 mb-5" style="margin-right: 70px;">
+            <div class="card-group mt-5 mb-5">
                 <div class="card p-5" style="background-color: #ffeaed;">
                     <h1 style="color: #c00003;">5</h1>
                     <h5 class="card-title ">Jenis Barang</h5>
