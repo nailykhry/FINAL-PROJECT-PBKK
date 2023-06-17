@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <title>Pembayaran</title>
+        <title>Struk</title>
         <style>
             .active{
                 background-color: #c00003;
@@ -43,9 +43,9 @@
         <!-- Judul -->
         <form>
             <div class="container shadow px-5 ps-5 pt-2" style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
-                <h1 class="fw-bold text-center">Pembayaran</h1>
+                <h1 class="fw-bold text-center">Struk</h1>
                 <div class="card mt-5 mb-5 shadow" style="border: none">
-                    <h5 class="card-header text-white" style="background-color: #c00003;">Pembayaran</h5>
+                    <h5 class="card-header text-white" style="background-color: #c00003;">Struk</h5>
                     <div class="card-body">
                         <div class="form-group mb-3">
                             <label for="kodetransaksi">Kode Transaksi</label>
