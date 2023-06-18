@@ -51,8 +51,8 @@
                 <h5 class="card-header text-white" style="background-color: #c00003;">Struk</h5>
                     <div class="card-body">
                         <div class="row">
-                            <p class="col card-title fw-bold">Kode Transaksi:</p>
-                            <p class="col card-title fw-bold">Tanggal:</p>
+                            <p class="col card-title fw-bold">Kode Transaksi: T001</p>
+                            <p class="col card-title fw-bold">Tanggal: 17-06-2023</p>
                         </div>
                         
                         <div class="form-group mb-3">
@@ -69,40 +69,40 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td scope="row">kode item 1</td>
-                                        <td>nama item 1</td>
-                                        <td>0</td>
+                                        <td scope="row">I001</td>
+                                        <td>Roti Tawar</td>
+                                        <td>1</td>
+                                        <td>Rp 15.000</td>
                                         <td>Rp 0</td>
-                                        <td>Rp 0</td>
-                                        <td>Rp 0</td>
+                                        <td>Rp 15.000</td>
                                     </tr>
                                     <tr>
-                                        <td scope="row">kode item 2</td>
-                                        <td>nama item 2</td>
-                                        <td>0</td>
-                                        <td>Rp 0</td>
-                                        <td>Rp 0</td>
-                                        <td>Rp 0</td>
+                                        <td scope="row">I005</td>
+                                        <td>Tissue 250s</td>
+                                        <td>1</td>
+                                        <td>Rp 10.000</td>
+                                        <td>Rp 1.100</td>
+                                        <td>Rp 8.900</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Total Item</th>
-                                        <td colspan="3">0</td>
+                                        <td colspan="3">2</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Total Discount</th>
-                                        <td colspan="3">Rp 0</td>
+                                        <td colspan="3">Rp 1.100</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Total Belanja</th>
-                                        <th colspan="3">Rp 0</th>
+                                        <th colspan="3">Rp 23.900</th>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Tunai/Kartu/E-money</th>
-                                        <td colspan="3">Rp 0</td>
+                                        <td colspan="3">Rp 25.000</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" colspan="3">Kembalian</th>
-                                        <td colspan="3">Rp 0</td>
+                                        <td colspan="3">Rp 1.100</td>
                                     </tr>
                                 </tbody>
                             </table>
