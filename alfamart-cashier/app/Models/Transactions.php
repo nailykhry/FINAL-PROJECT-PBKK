@@ -2,23 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Products;
+use App\Models\Detail_transactions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Transactions extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id_barang',
-        'jumlah_barang',
         'ppn',
         'pembayaran',
         'no_kartu',
     ];
 
-    public function product()
+    public function products()
     {
-        return $this->belongsTo(Product::class, 'id_barang');
+        return $this->belongsToMany(Products::class, 'detail_transactions', 'kode_transaksi', 'kode_barang')
+            ->withPivot('jumlah_barang')
+            ->withTimestamps();
     }
+
+
 }

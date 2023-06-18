@@ -18,7 +18,7 @@ class ProductsFactory extends Factory
     public function definition()
     {
         return [
-            'kode_barang' => $this->faker->unique()->ean8,
+            'id' => $this->faker->unique()->ean8,
             'nama_barang' => $this->faker->word,
             'harga_beli_barang' => $this->faker->randomNumber(4),
             'harga_jual_barang' => $this->faker->randomNumber(5),
