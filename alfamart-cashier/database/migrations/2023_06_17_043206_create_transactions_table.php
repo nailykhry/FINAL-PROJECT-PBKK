@@ -15,14 +15,12 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('id_barang');
-            $table->integer('jumlah_barang');
             $table->decimal('ppn', 8, 2);
+            $table->decimal('total', 8, 2);
             $table->string('pembayaran');
             $table->string('no_kartu')->nullable();
+            $table->string('status');
             $table->timestamps();
-            
-            $table->foreign('id_barang')->references('kode_barang')->on('products')->onDelete('cascade');
         });
     }
 

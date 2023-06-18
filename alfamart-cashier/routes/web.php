@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InventarisController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,12 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', [DashboardController::class, 'index']);
+
+Route::get('transaksi', [TransactionController::class, 'index']);
+Route::post('/pembayaran', [TransactionController::class, 'pembayaran']);
+Route::get('/halaman-pembayaran', [TransactionController::class, 'payment']);
+Route::post('/update-transaction', [TransactionController::class, 'update']);
+
+Route::post('/search-product', [ProductController::class, 'search']);
+
+Route::get('inventaris', [InventarisController::class, 'index']);

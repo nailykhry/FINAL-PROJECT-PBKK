@@ -13,11 +13,11 @@ class DashboardController extends Controller
     {
         $productCount = Products::count();
         $transactionCount = Transactions::count();
-        $totalQuantity = Transactions::sum('jumlah_barang');
+        // $totalQuantity = Transactions::sum('jumlah_barang');
         return view('dashboard', [
             'productCount' => $productCount,
             'transactionCount' => $transactionCount,
-            'selled' => $totalQuantity,
+            'selled' => 000,
         ]);
 
     }
