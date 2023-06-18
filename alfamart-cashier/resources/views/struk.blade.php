@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <title>Struk</title>
     <style>
         .active {
@@ -52,82 +57,118 @@
     <!-- End of Side bar -->
 
     <!-- Form -->
-    <form>
-        <div class="container shadow px-5 ps-5 pt-2"
-            style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
-            <h1 class="fw-bold text-center">Struk</h1>
-            <div class="card mt-5 mb-5 shadow" style="border: none">
-                <h5 class="card-header text-white" style="background-color: #c00003;">Struk</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <p class="col card-title fw-bold">Kode Transaksi: ALF00{{$transaction['id']}}</p>
-                        <p class="col card-title fw-bold">Tanggal: 17-06-2023</p>
-                    </div>
 
-                    <div class="form-group mb-3">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Kode Item</th>
-                                    <th scope="col">Nama Item</th>
-                                    <th scope="col">Jumlah</th>
-                                    <th scope="col">Harga</th>
-                                    <th scope="col">Discount</th>
-                                    <th scope="col">Sub Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
 
-                                <?php $total_item = 0;
+    <div class="container shadow px-5 ps-5 pt-2"
+        style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
+        <h1 class="fw-bold text-center">Struk</h1>
+        <div class="card mt-5 mb-5 shadow" style="border: none" id="makepdf">
+            <h5 class="card-header text-white" style="background-color: #c00003;">Struk</h5>
+            <div class="card-body">
+                <div class="row">
+                    <p class="col card-title fw-bold">Kode Transaksi: ALF00{{$transaction['id']}}</p>
+                    <p class="col card-title fw-bold" id="date"></p>
+                </div>
+
+                <div class="form-group mb-3">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kode Item</th>
+                                <th scope="col">Nama Item</th>
+                                <th scope="col">Jumlah</th>
+                                <th scope="col">Harga</th>
+                                <th scope="col">Discount</th>
+                                <th scope="col">Sub Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php $total_item = 0;
                                 $total_discount = 0; ?>
 
-                                @foreach ($products as $product)
-                                <tr>
-                                    <?php $total_item =  $total_item + $product->pivot->jumlah_barang;
+                            @foreach ($products as $product)
+                            <tr>
+                                <?php $total_item =  $total_item + $product->pivot->jumlah_barang;
                                     $total_discount = $total_discount + ($product['harga_jual_barang']*$product['discount']) ?>
 
-                                    <td scope="row">{{$product['id']}}</td>
-                                    <td>{{$product['nama_barang']}}r</td>
-                                    <td>{{$product->pivot->jumlah_barang}}</td>
-                                    <td>Rp {{$product['harga_jual_barang']}}</td>
-                                    <td>Rp
-                                        {{$product['harga_jual_barang']*$product['discount']}}
-                                    </td>
-                                    <td>Rp {{($product['harga_jual_barang'] - ($product['harga_jual_barang'] *
-                                        $product['discount'])) * $product->pivot->jumlah_barang }}</td>
-                                </tr>
-                                @endforeach
+                                <td scope="row">{{$product['id']}}</td>
+                                <td>{{$product['nama_barang']}}r</td>
+                                <td>{{$product->pivot->jumlah_barang}}</td>
+                                <td>Rp {{$product['harga_jual_barang']}}</td>
+                                <td>Rp
+                                    {{$product['harga_jual_barang']*$product['discount']}}
+                                </td>
+                                <td>Rp {{($product['harga_jual_barang'] - ($product['harga_jual_barang'] *
+                                    $product['discount'])) * $product->pivot->jumlah_barang }}</td>
+                            </tr>
+                            @endforeach
 
-                                <tr>
-                                    <th scope="row" colspan="3">Total item</th>
-                                    <td colspan="3">{{$total_item}}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" colspan="3">Total Discount</th>
-                                    <td colspan="3">Rp {{ $total_discount}}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" colspan="3">Total Belanja</th>
-                                    <th colspan="3">Rp {{$transaction['total']}}</th>
-                                </tr>
-                                <tr>
-                                    <th scope="row" colspan="3">{{$transaction['pembayaran']}}</th>
-                                    <td colspan="3">Rp {{$bayar}}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" colspan="3">Kembalian</th>
-                                    <td colspan="3">Rp {{$kembalian}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- Button Selesaikan Transaksi -->
-                        <button class="btn btn-warning">Cetak Struk</button>
-                        <button class="btn btn-outline-danger mx-3">Kembali</button>
-                    </div>
+                            <tr>
+                                <th scope="row" colspan="3">Total item</th>
+                                <td colspan="3">{{$total_item}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="3">Total Discount</th>
+                                <td colspan="3">Rp {{ $total_discount}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="3">Total Belanja</th>
+                                <th colspan="3">Rp {{$transaction['total']}}</th>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="3">{{$transaction['pembayaran']}}</th>
+                                <td colspan="3">Rp {{$bayar}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="3">Kembalian</th>
+                                <td colspan="3">Rp {{$kembalian}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Button Selesaikan Transaksi -->
+                    <button class="btn btn-warning" id="printStruk">Cetak Struk</button>
+                    <button class="btn btn-outline-danger mx-3">Kembali</button>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
+
+
+
+    <script>
+        const button = document.getElementById('printStruk');
+        function generatePDF() {
+            // Choose the element that your content will be rendered to.
+            const element = document.getElementById('makepdf');
+            // Choose the element and save the PDF for your user.
+            html2pdf().from(element).save();
+        }
+
+        button.addEventListener('click', generatePDF);
+    
+    </script>
+
+
+    <script>
+        let today = new Date();
+
+        let day = today.getDate();
+        let month = today.getMonth() + 1; 
+        let year = today.getFullYear();
+
+    
+        day = day < 10 ? '0' + day : day;
+        month = month < 10 ? '0' + month : month;
+
+        let formattedDate = day + '-' + month + '-' + year;
+        var elemen = document.getElementById("date");
+        elemen.innerHTML = 'Tanggal : ' + formattedDate;
+    </script>
+
+
 </body>
+
+
 
 </html>
