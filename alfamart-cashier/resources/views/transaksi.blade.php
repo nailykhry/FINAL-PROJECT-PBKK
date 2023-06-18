@@ -44,7 +44,7 @@
         <!-- End of Side bar -->
 
         <!-- Judul -->
-        <form>
+        <form id=transaksi>
             <div class="container shadow px-5 ps-5 pt-2" style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
                 <h1 class="fw-bold text-center">Transaksi</h1>
 
@@ -65,7 +65,7 @@
                                 <!-- Pilih nama item -->
                                 <div class="col form-group mb-3">
                                     <label for="kodeitem">Kode Item</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" aria-label="Default select example" id="kodeitem">
                                         <option selected>Pilih kode item</option>
                                         <option value="1">kode 1</option>
                                         <option value="2">kode 2</option>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="col form-group mb-3">
                                     <label for="namaitem">Nama Item</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" aria-label="Default select example" id="namaitem">
                                         <option selected>Pilih nama item</option>
                                         <option value="1">Tissue 250s</option>
                                         <option value="2">Air Mineral 1,5L</option>
@@ -95,12 +95,8 @@
                                     <label for="jumlahitem">Jumlah Item</label>
                                     <input type="text" class="form-control" id="jumlahitem" name="jumlahitem" placeholder="Jumlah Item">
                                 </div>
-                                <div class="col form-group mb-3">
-                                    <label for="subtotal" class="fw-bold">Sub Total</label>
-                                    <input type="text" class="form-control" id="subtotal" name="subtotal" placeholder="Sub Total">
-                                </div>
                                 <!-- Button Tambahkan ke Antrian -->
-                                <button class="btn btn-warning w-100">Tambahkan ke Antrian</button>   
+                                <button class="btn btn-warning w-100" type="submit">Tambahkan ke Antrian</button>   
                             </div>
                         </div>
                     </div>
@@ -109,59 +105,117 @@
                         <h5 class="card-header text-white" style="background-color: #c00003;">Antrian Item</h5>
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <!-- Button Tambahkan ke Antrian -->
+                                <!-- Button Lanjut ke Pembayaran -->
                                 <button class="btn btn-warning mb-3">Lanjut ke Pembayaran</button>
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Kode Antrian</th>
+                                        <th scope="col">Kode Item</th>
                                         <th scope="col">Nama Item</th>
                                         <th scope="col">Jumlah</th>
                                         <th scope="col">Sub Total</th>
                                         <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td scope="row">kode antrian 1</td>
-                                            <td>nama item 1</td>
-                                            <td>1</td>
-                                            <td>Rp 0</td>
-                                            <td>
-                                                <button class="btn btn-danger">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">kode antrian 2</td>
-                                            <td>nama item 2</td>
-                                            <td>2</td>
-                                            <td>Rp 0</td>
-                                            <td>
-                                                <button class="btn btn-danger">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" colspan="3">Total Belanja</th>
-                                            <th colspan="2">Rp 0</th>
-                                        </tr>
+                                    <tbody id="hasilTransaksi">
+                                        <!-- Hasil transaksi akan ditambahkan di sini -->
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                        <th scope="row" colspan="3">Total Belanja</th>
+                                        <td colspan="2" id="totalBelanja"></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
+        <script>
+            // Ambil elemen formulir dan hasil
+            const form = document.getElementById('transaksi');
+            const namaitem = document.getElementById('namaitem');
+            const kodeitem = document.getElementById('kodeitem');
+            const harga = document.getElementById('harga');
+            const discount = document.getElementById('discount');
+            const jumlahitem = document.getElementById('jumlahitem');
+            const hasilTransaksi = document.getElementById('hasilTransaksi');
+            const totalBelanja = document.getElementById('totalBelanja');
+
+            // Tambahkan event listener untuk saat formulir dikirim
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Mencegah pengiriman formulir
+
+                // Ambil nilai input kodeitem
+                const selectedOption = kodeitem.options[kodeitem.selectedIndex];
+                const kodeitemValue = selectedOption.text;
+
+                // Ambil nilai input namaitem
+                const selectedOptionNama = namaitem.options[namaitem.selectedIndex];
+                const namaitemValue = selectedOptionNama.text;
+
+                // Ambil nilai input harga
+                const hargaValue = harga.value;
+
+                // Ambil nilai input discount
+                const discountValue = discount.value;
+
+                // Ambil nilai input jumlahitem
+                const jumlahitemValue = jumlahitem.value;
+
+                // Hitung subtotal
+                const subtotalValue = (hargaValue - discountValue) * jumlahitemValue;
+
+                // Tambahkan hasil transaksi ke dalam tabel
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                <td>${kodeitemValue}</td>
+                <td>${namaitemValue}</td>
+                <td>${jumlahitemValue}</td>
+                <td>${subtotalValue}</td>
+                <td>
+                    <button class="btn btn-danger delete-row">Hapus</button>
+                </td>
+                `;
+
+                // Tambahkan event listener untuk saat tombol "Hapus" di klik
+                const deleteButton = newRow.querySelector('.delete-row');
+                deleteButton.addEventListener('click', function() {
+                newRow.remove(); // Hapus baris dari tabel
+
+                // Hitung total belanja
+                let total = 0;
+                const subtotalElements = hasilTransaksi.querySelectorAll('td:nth-child(4)');
+                subtotalElements.forEach(element => {
+                    total += parseInt(element.textContent);
+                });
+
+                // Tampilkan total belanja
+                totalBelanja.textContent = 'Rp ' + total;
+                });
+
+                hasilTransaksi.appendChild(newRow);
+
+                // Hitung total belanja
+                let total = 0;
+                const subtotalElements = hasilTransaksi.querySelectorAll('td:nth-child(4)');
+                subtotalElements.forEach(element => {
+                total += parseInt(element.textContent);
+                });
+
+                // Tampilkan total belanja
+                totalBelanja.textContent = 'Rp ' + total;
+
+                // Reset nilai input setelah ditambahkan ke tabel
+                kodeitem.selectedIndex = 0;
+                namaitem.selectedIndex = 0;
+                harga.value = '';
+                discount.value = '';
+                jumlahitem.value = '';
+            });
+        </script>
+
     </body>
 </html>
