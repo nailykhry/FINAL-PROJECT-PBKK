@@ -58,7 +58,7 @@
         style="margin-left: 15%; width: 85%; height: 70px; background-color: #ffeaed; color: #c00003;">
         <h1 class="fw-bold text-center">Transaksi</h1>
 
-        <div id="next"></div>
+
 
         <!-- Card -->
         <div class="row mt-5 w-100">
@@ -117,6 +117,17 @@
                 </div>
             </form>
 
+            <div class="card m-5" id="next" style="display: none;">
+                <div class="card-header">
+                    Pembayaran
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Lanjut ke pembayaran</h5>
+                    <p class="card-text">Klik button untuk lanjut ke pembayaran</p>
+                    <a href="/halaman-pembayaran" class="btn btn-danger">Lanjut ke pembayaran</a>
+                </div>
+            </div>
+
             <form>
                 @csrf
                 <!-- Card Antrian Item -->
@@ -125,8 +136,8 @@
                     <div class="card-body">
                         <div class="form-group mb-3">
                             <!-- Button Lanjut ke Pembayaran -->
-                            <button type="submit" class="btn btn-warning mb-3" id="btn-pembayaran">Lanjut ke
-                                Pembayaran</button>
+                            <button type="submit" class="btn btn-warning mb-3" id="btn-pembayaran">Lanjutkan
+                                transaksi</button>
                             <table class="table table-bordered table-striped" id="tableData">
                                 <thead>
                                     <tr>
@@ -322,27 +333,8 @@
                         totalBelanja: totalAngka
                     },
                     success: function(response) {
-                        // Membuat elemen tombol
-                        var button = document.createElement("button");
-                        button.innerHTML = "Klik Saya"; 
-
-                        // Menambahkan gaya pada tombol
-                        button.style.backgroundColor = "blue";
-                        button.style.color = "white";
-                        button.style.padding = "10px 20px";
-                        button.style.border = "none";
-                        button.style.cursor = "pointer";
-
-                        // Menambahkan atribut href ke tombol
-                        button.setAttribute("href", "/halaman-pembayaran");
-
-                        // Menambahkan tombol ke dalam elemen dengan ID "next"
-                        var container = document.getElementById("next");
-                        container.appendChild(button);
-
-                        button.addEventListener("click", function() {
-                        window.location.href = "/halaman-pembayaran";
-                        });
+                        var card = document.getElementById("next");
+                        card.style.display = "block";
                     },
                     error: function(xhr, status, error) {
                         console.log("error");
